@@ -8,7 +8,7 @@ const password = ref("");
 const users = reactive([]); 
 
 const onSubmit = async ()=>{
-  const [error,user] = await apiUserRegister(username.value);
+  const [error,newUser] = await apiUserRegister(username.value);
 //   console.log("ERR", error);
 //   console.log("user" , user);
 }
