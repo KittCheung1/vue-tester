@@ -1,1 +1,1 @@
-export const BASE_USER_URL = "https://trivia-game-noroff-api.herokuapp.com/";
+export const BASE_USER_URL = "https://trivia-game-noroff-api.herokuapp.com/trivia";

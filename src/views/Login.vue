@@ -5,12 +5,12 @@ import { apiUserRegister } from "../api/users";
 
 const username = ref("");
 const password = ref("");
-const users = reactive([]);
+const users = reactive([]); 
 
 const onSubmit = async ()=>{
   const [error,user] = await apiUserRegister(username.value);
-  console.log("ERR", error);
-  console.log("user" , user);
+//   console.log("ERR", error);
+//   console.log("user" , user);
 }
 </script>
 
