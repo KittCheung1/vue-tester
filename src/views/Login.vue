@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { reactive } from "vue";
+import { BASE_USER_URL } from "../api";
 import { apiUserRegister } from "../api/users";
 
 const username = ref("");
@@ -8,10 +9,24 @@ const password = ref("");
 const users = reactive([]); 
 
 const onSubmit = async ()=>{
-  const [error,newUser] = await apiUserRegister(username.value);
+  const [error, user] = await apiUserRegister(username.value);
 //   console.log("ERR", error);
 //   console.log("user" , user);
 }
+
+// const apiURL = BASE_USER_URL;
+// const username2 = 'dewaldes'
+// users = async function(){
+//  await fetch(`${apiURL}/trivia?username=${username2}`)
+//       .then(response => response.json())
+//       .then(results => {
+//           // results will be an array of users that match the username of mega-mind.
+//       })
+//       .catch(error => {
+//       })
+//   console.log(results)
+// }
+
 </script>
 
 
@@ -33,7 +48,7 @@ const onSubmit = async ()=>{
         />
       </fieldset>
 
-      <fieldset class="mb-3">
+      <!-- <fieldset class="mb-3">
         <label for="password" aria-label="password" class="block"
           >password
         </label>
@@ -44,7 +59,7 @@ const onSubmit = async ()=>{
           class="border border-slate-300"
           v-model="password"
         />
-      </fieldset>
+      </fieldset> -->
 
       <button type="submit" class="bg-indigo-500 text-white p-3 rounded">
         Register
